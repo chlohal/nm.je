@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+    <title><%= @title %></title>
+
+    <meta name="generator" content="kramdown <%= @generator %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://brick.freetls.fastly.net">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta name="theme-color" content="#EBF9FE" />
+
+    <!--fonts-->
+    <style>
+        @font-face {
+            font-family: 'Karla';
+            font-display: swap;
+            font-style: normal;
+            font-weight: 400;
+            src: local('Karla Regular'), url(https://brick.freetls.fastly.net/fonts/karla/400.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Karla';
+            font-display: swap;
+            font-style: normal;
+            font-weight: 700;
+            src: local('Karla Bold'), url(https://brick.freetls.fastly.net/fonts/karla/700.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Karla';
+            font-display: swap;
+            font-style: italic;
+            font-weight: 400;
+            src: local('Karla Italic'), url(https://brick.freetls.fastly.net/fonts/karla/400i.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Karla';
+            font-display: swap;
+            font-style: italic;
+            font-weight: 700;
+            src: local('Karla Bold Italic'), url(https://brick.freetls.fastly.net/fonts/karla/700i.woff) format('woff')
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.addEventListener("load", function () {
+            var img = document.getElementById("nhs-bob");
+            var oldScroll = 0;
+            function scrollAnim(timestamp) {
+                var scroll = window.scrollY;
+                var delta = scroll - oldScroll;
+                oldScroll = scroll;
+                img.style.transform = `translateY(${Math.max(1, delta / window.innerHeight * 100) * (Math.sin(timestamp / 1000)) * 10}px)`;
+                window.requestAnimationFrame(scrollAnim);
+            }
+
+            window.requestAnimationFrame(scrollAnim);
+        });
+    </script>
+</head>
+
+<body>
+    <main class="halved">
+        <div id="first-half">
+            <div id="splash-content">
+                <h1><span class="h-focus-letter">N</span><span class="h-unfocus">eedham, </span><span
+                        class="h-focus-letter">M</span><span class="h-unfocus">A</span></h1>
+                <p>A link shortener for the town of Needham, Massachusetts.</p>
+            </div>
+        </div>
+        <div id="second-half" aria-hidden="true">
+            <svg id="curvature" width="16" height="16" viewBox="0 0 16 16" preserveAspectRatio="none">
+                <path d="M 16, 0 Q 16, 16 0, 16 L 16, 16 Z" />
+            </svg>
+            <img src="nhs-hero-half.png" id="nhs-bob" alt="Needham High School">
+        </div>
+    </main>
+    <section id="features">
+        <ul class="cards">
+            <li>
+                <h3>Free</h3>
+                <p>You don't have to pay money. That's pretty cool.</p>
+            </li>
+            <li>
+                <h3>Short</h3>
+                <p>Shorter than bit.ly, tinyurl, or other major url shorteners.</p>
+            </li>
+            <li>
+                <h3>Easy</h3>
+                <p>Links are engineered for readability and ease of use.</p>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <a href="/">nm.je</a> is created by <a href="https://coleh.net">coleh</a> with <img loading="lazy" class="emoji" title="love" width="24" alt="❤"
+            src="heart.svg"><br>
+            Code is <a href="https://github.com/coleh2/nm.je">available on</a>
+            <img loading="lazy" class="emoji" width="24" alt="GitHub" title="GitHub" src="github.svg">
+    </footer>
+</body>
+
+</html>
