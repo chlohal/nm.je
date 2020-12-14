@@ -66,6 +66,44 @@
             }
 
             window.requestAnimationFrame(scrollAnim);
+
+            var form = document.getElementById("form");
+            form.addEventListener("submit", function(event) {
+                var formData = new FormData(form);
+
+                event.preventDefault();
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open("POST", "/api/shorten");
+
+                xhr.onload = function() {
+                    if(xhr.status == 201) {
+                        showSuccessBox(xhr.responseText);
+                    } else {
+                        alert("error: " + xhr.responseText);
+                    }
+                }
+
+                xhr.send(JSON.stringify({
+                    to: formData.get("to"),
+                    from: formData.get("from")
+                }));
+            });
+
+            document.getElementById("link-parent").addEventListener("click", function() {
+                document.getElementById("link-parent").removeAttribute("open");
+            });
+            document.getElementById("link-parent").children[0].addEventListener("click", function(event) {
+                event.stopPropagation();
+            });
+
+            function showSuccessBox(link) {
+                document.getElementById("link-parent").setAttribute("open", "true");
+                document.getElementById("link-sample").innerText = link;
+                document.getElementById("link-sample").href = link;
+                
+            }
         });
     </script>
 </head>
@@ -102,12 +140,26 @@
             </li>
         </ul>
     </section>
+    <form action="api/shorten" method="GET" id="form">
+        <fieldset>
+            <input name="to" placeholder="URL to Shorten">
+            <input name="from" placeholder="Custom Short Link">
+        </fieldset>
+        <button type="submit">Go</button>
+    </form>
     <footer>
         <a href="/">nm.je</a> is created by <a href="https://coleh.net">coleh</a> with <img loading="lazy" class="emoji" title="love" width="24" alt="❤"
             src="heart.svg"><br>
             Code is <a href="https://github.com/coleh2/nm.je">available on</a>
             <img loading="lazy" class="emoji" width="24" alt="GitHub" title="GitHub" src="github.svg">
     </footer>
+
+    <dialog id="link-parent">
+        <div>
+            <h2>Success!</h2>
+            <p>You can access your link at <a id="link-sample"></a></p>
+        </div>
+    </dialog>
 </body>
 
 </html>

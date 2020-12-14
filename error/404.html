@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+    <title>Needham URL Shortener</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://brick.freetls.fastly.net">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta name="theme-color" content="#EBF9FE" />
+
+    <!--fonts-->
+    <style>
+        @font-face {
+            font-family: 'Karla';
+            font-display: swap;
+            font-style: normal;
+            font-weight: 400;
+            src: local('Karla Regular'), url(https://brick.freetls.fastly.net/fonts/karla/400.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Karla';
+            font-display: swap;
+            font-style: normal;
+            font-weight: 700;
+            src: local('Karla Bold'), url(https://brick.freetls.fastly.net/fonts/karla/700.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Karla';
+            font-display: swap;
+            font-style: italic;
+            font-weight: 400;
+            src: local('Karla Italic'), url(https://brick.freetls.fastly.net/fonts/karla/400i.woff) format('woff')
+        }
+
+        @font-face {
+            font-family: 'Karla';
+            font-display: swap;
+            font-style: italic;
+            font-weight: 700;
+            src: local('Karla Bold Italic'), url(https://brick.freetls.fastly.net/fonts/karla/700i.woff) format('woff')
+        }
+    </style>
+    <style>
+        .center.full-screen {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .flush-bottom {
+            margin-bottom: 0;
+        }
+        ul {
+            margin: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="center full-screen">
+            <div id="splash-content">
+                <h1><span class="h-focus-letter">404</span> <span class="h-unfocus">Not&nbsp;Found</span></h1>
+                <p>Looks like you might have clicked on a bad link. Here are some troubleshooting tips! 
+                <ul>
+                    <li>
+                        Make sure that you didn't make any typos in the address
+                    </li>
+                    <li>
+                        <a href="#" onclick="history.back()">Go back to the last page</a> and try again
+                    </li>
+                    <li>
+                        Go to <a href="/">the homepage</a>
+                    </li>
+                    <li>
+                        Ask the person who gave you this link for help
+                    </li>
+                </ul></p>
+            </div>
+    </main>
+    <footer>
+        <a href="/">nm.je</a> is created by <a href="https://coleh.net">coleh</a> with <img loading="lazy" class="emoji" title="love" width="24" alt="❤"
+            src="heart.svg"><br>
+            Code is <a href="https://github.com/coleh2/nm.je">available on</a>
+            <img loading="lazy" class="emoji" width="24" alt="GitHub" title="GitHub" src="github.svg">
+    </footer>
+</body>
+
+</html>

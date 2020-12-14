@@ -1,1 +1,4 @@
-/g*    https://doc.nhs.gg/:splat   301
+/-g*   https://doc.nhs.gg/:splat                301
+/api/* /.netlify/functions/:splat               200
+/404   /error/404                               404
+/*     /.netlify/functions/redirect?id=:splat   200
