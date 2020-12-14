@@ -1,5 +1,8 @@
 exports.handler = function (event, context, callback) {
-    var shortened = event.queryStringParameters.id;
+    var pathParts = event.path.split("/");
+    var shortened = pathParts[pathParts.length - 1];
+
+    console.log(event.queryStringParameters);
     if(!shortened) {
         callback(null, {
             statusCode: 400,
