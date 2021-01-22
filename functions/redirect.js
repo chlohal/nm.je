@@ -26,7 +26,7 @@ exports.handler = function (event, context, callback) {
 
     //make FQL json to find our shortener term
     var body = JSON.stringify(
-        {"select":["data","long"],"from":{"get":{"match":{"index":"shorteners"},"terms":shortened.toLowerCase()}},"default":""}
+        {"select":["data","long"],"from":{"get":{"match":{"index":"shorteners"},"terms":shortened}},"default":""}
     );
 
     var https = require("https");
