@@ -11,7 +11,7 @@ exports.handler = function (event, context, callback) {
         return false;
     }
 
-    shortened = shortened + "";
+    shortened = (shortened + "").toLowerCase();
 
     console.log("shortenerd", shortened);
 
