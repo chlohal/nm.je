@@ -36,7 +36,7 @@ exports.handler = function (event, context, callback) {
         return false;
     }
 
-    var short = bodyJson.from ? bodyJson.from + "" : ((Date.now()).toString(36));
+    var short = bodyJson.from ? (bodyJson.from + "").toLowerCase() : ((Date.now()).toString(36));
     short = short.replace(/\./g, "-");
 
     if(short.startsWith("-g")) {
