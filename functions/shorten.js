@@ -1,6 +1,15 @@
 var BASE_URL = "https://nm.je/"
 
 exports.handler = function (event, context, callback) {
+    
+    //INCIDENT MITIGATION
+    callback(null, {
+        statusCode: 400,
+        body: "Creation of short-links is temporarily disabled",
+        headers: {"Content-Type": "text/plain"}
+    });
+    return;
+    
     var body = event.body;
 
     var bodyJson;
